@@ -1,24 +1,18 @@
-# README
+## Requirements
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Docker
 
-Things you may want to cover:
+## Information of the project
 
-* Ruby version
+- Ruby version 3.3
+- Rails version 7.1
 
-* System dependencies
+## Run instructions
 
-* Configuration
+1.- Run the command
 
-* Database creation
+```
+docker-compose up -d
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+2.- Enter to te following url `localhost:4040`
