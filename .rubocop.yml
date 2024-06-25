@@ -1,0 +1,24 @@
+inherit_from: .rubocop_todo.yml
+require:
+  - rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 3.3
+  NewCops: enable
+
+Rails:
+  Enabled: true
+
+Metrics/BlockLength:
+  Exclude:
+    - "spec/**/*.rb"
+    - "db/schema.rb"
+    - "config/**/*.rb"
+
+Layout/LineLength:
+  Exclude:
+    - "db/schema.rb"
+    - "config/**/*.rb"
+
+Style/Documentation:
+  Enabled: false
