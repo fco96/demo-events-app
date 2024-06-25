@@ -10,7 +10,8 @@
         "castwide.solargraph",
         "rubocop.vscode-rubocop",
         "eamodio.gitlens",
-        "ahgood.shift-shift"
+        "ahgood.shift-shift",
+        "CraigMaslowski.erb"
       ]
     }
   } //　The directory to connect to at startup

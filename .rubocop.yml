@@ -19,5 +19,9 @@ Layout/LineLength:
     - "db/schema.rb"
     - "config/**/*.rb"
 
+Lint/Syntax:
+  Exclude:
+    - "app/views/**/*.html.erb"
+
 Style/Documentation:
   Enabled: false
