@@ -19,9 +19,9 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-      redirect_to @event, notice: 'Event was successfully created.'
+      redirect_to events_path, notice: 'Evento creado exitosamente!'
     else
-      render :new
+      render :new, status: :internal_server_error
     end
   end
 
@@ -29,7 +29,7 @@ class EventsController < ApplicationController
     if @event.update(event_params)
       redirect_to @event, notice: 'Event was successfully updated.'
     else
-      render :edit
+      render :edit, status: :internal_server_error
     end
   end
 

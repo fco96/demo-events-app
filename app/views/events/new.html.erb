@@ -1,4 +1,64 @@
-<h3>
-  Crear un nuevo evento
-</h3>
+<div class="row justify-content-center">
+  <div class="col-md-4">
+    <h3>
+      <%= @event.persisted? ? 'Editar' : 'Crear' %> evento
+    </h3>
 
+    <%= form_with(model: @event, local: true, html: { class: 'needs-validation', novalidate: true }) do |form| %>
+      <% if @event.errors.any? %>
+        <div class="alert alert-danger">
+          <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+          <ul>
+            <% @event.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="mb-3">
+        <%= form.label :name, "Nombre", class: 'form-label' %>
+        <%= form.text_field :name, class: 'form-control', required: true %>
+        <div class="invalid-feedback">
+          El evento debe tener un nombre
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :description, "Descripción (opcional)", class: 'form-label' %>
+        <%= form.text_area :description, class: 'form-control' %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :date_time, "Fecha del evento", class: 'form-label' %>
+        <%= form.datetime_field :date_time, class: 'form-control', required: true, min: (Date.today.beginning_of_day).strftime("%Y-%m-%dT%H:%M") %>        <div class="invalid-feedback">
+          Debes proporcionar una fecha y hora válida.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :location, "Ubicación", class: 'form-label' %>
+        <%= form.text_field :location, class: 'form-control', required: true %>
+        <div class="invalid-feedback">
+          Debes indicar el lugar ubicación.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :capacity, "Capacidad", class: 'form-label' %>
+        <%= form.number_field :capacity, class: 'form-control', required: true %>
+        <div class="invalid-feedback">
+          Debes indicar la capacidad del evento.
+        </div>
+      </div>
+
+      <%= form.hidden_field :user_id, value: current_user.id %>
+
+      <div class="mt-4 mb-3">
+        <%= form.submit 'Crear', class: 'btn btn-primary w-100' %>
+      </div>
+    <% end %>
+
+    <%= link_to 'Volver', events_path, class: 'btn btn-secondary w-100' %>
+  </div>
+</div>
