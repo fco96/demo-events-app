@@ -1,11 +1,22 @@
 <% if notice %>
-  <div class="alert alert-primary text-center" role="alert">
+  <div class="global-feedback-alert alert alert-primary text-center" role="alert">
     <%= notice %>
   </div>
 <% end %>
 
 <% if alert %>
-  <div class="alert alert-danger text-center" role="alert">
+  <div class="global-feedback-alert alert alert-danger text-center" role="alert">
     <%= alert %>
   </div>
+<% end %>
+
+<% if alert || notice %>
+  <script>
+    setTimeout(() => {
+      const alert = document.querySelector('.global-feedback-alert')
+      if (alert){
+        alert.classList.add('fade-out')
+      }
+    }, 5000);
+  </script>
 <% end %>
