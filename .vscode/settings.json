@@ -3,5 +3,10 @@
     "editor.tabSize": 2,
     "editor.defaultFormatter": "rubocop.vscode-rubocop"
   },
-  "solargraph.useBundler": true
+  "solargraph.useBundler": true,
+  "emmet.includeLanguages": {
+    "erb": "html",
+    "html.erb": "html",
+    "vue": "html"
+  },
 }
