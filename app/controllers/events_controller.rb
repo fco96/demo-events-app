@@ -27,7 +27,7 @@ class EventsController < ApplicationController
 
   def update
     if @event.update(event_params)
-      redirect_to @event, notice: 'Event was successfully updated.'
+      redirect_to events_path, notice: 'Evento actualizado exitosamente!'
     else
       render :edit, status: :internal_server_error
     end

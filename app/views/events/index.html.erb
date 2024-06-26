@@ -10,37 +10,6 @@
 
 <div class="mt-3">
   <% @events.each do |event| %>
-    <div class="shadow-sm p-3 mb-4 bg-body-tertiary rounded">
-      <h3>
-        <%= event.name %>
-      </h3>
-      <p>
-        <%= event.description %>
-      </p>
-      <p>
-        <strong>
-          Fecha:
-        </strong>
-        <%= event.date_time.strftime('%d/%m/%Y %H:%M') %>
-      </p>
-      <p>
-        <strong>
-          Ubicación:
-        </strong>
-        <%= event.location %>
-      </p>
-      <p>
-        <strong>
-          Capacidad:
-        </strong>
-        <%= event.capacity %>
-      </p>
-      <p>
-        <strong>
-          Creado por:
-        </strong>
-        <%= event.user.email %>
-      </p>
-    </div>
+    <%= render 'event_box', event: event %>
   <% end %>
 </div>

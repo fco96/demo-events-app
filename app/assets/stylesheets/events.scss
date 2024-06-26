@@ -1,0 +1,11 @@
+.event-box{
+  position: relative;
+
+  .actions-container{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-top: 16px;
+    padding-right: 16px;
+  }
+}

@@ -1,0 +1,42 @@
+<div class="event-box card mb-4">
+  <div class="card-body">  
+    <h3>
+      <%= event.name %>
+    </h3>
+    <p>
+      <%= event.description %>
+    </p>
+    <p>
+      <i class="fa-regular fa-calendar"></i>
+
+      <strong>
+        Fecha:
+      </strong>
+      <%= event.date_time.strftime('%d/%m/%Y %H:%M') %>
+    </p>
+    <p>
+      <i class="fa-solid fa-location-dot"></i>
+      <strong>
+        Ubicación:
+      </strong>
+      <%= event.location %>
+    </p>
+    <p>
+      <strong>
+        Capacidad:
+      </strong>
+      <%= event.capacity %>
+    </p>
+
+    <div class="actions-container">
+      <%= link_to edit_event_path(event), class: 'btn btn-primary' do %>
+        <i class="fa-solid fa-pen"></i>
+      <% end %>
+
+      <%= link_to event, method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger' do %>
+        <i class="fa-solid fa-trash"></i>
+      <% end %>
+
+    </div>
+  </div>
+</div>
