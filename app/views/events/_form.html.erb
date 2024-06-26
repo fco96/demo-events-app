@@ -29,7 +29,8 @@
 
   <div class="mb-3">
     <%= form.label :date_time, "Fecha del evento", class: 'form-label' %>
-    <%= form.datetime_field :date_time, class: 'form-control', required: true, min: (Date.today.beginning_of_day).strftime("%Y-%m-%dT%H:%M") %>        <div class="invalid-feedback">
+    <%= form.datetime_field :date_time, class: 'form-control', required: true %>
+    <div class="invalid-feedback">
       Debes proporcionar una fecha y hora válida.
     </div>
   </div>
