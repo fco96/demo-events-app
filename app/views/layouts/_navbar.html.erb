@@ -14,7 +14,7 @@
             <%= current_user&.email || 'Invitado' %>
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Mi Perfil</a></li>
+            <li><a class="dropdown-item" href="<%= edit_user_registration_path %>">Mi Perfil</a></li>
             <% if current_user %>
               <li>
                 <%= button_to "Cerrar sesión", destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
