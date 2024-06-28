@@ -2,7 +2,7 @@
   <%= @event.persisted? ? 'Editar' : 'Crear' %> evento
 </h3>
 
-<%= form_with(model: @event, local: true, html: { class: 'needs-validation', novalidate: true }) do |form| %>
+<%= form_with(model: @event, local: true, html: { class: 'needs-validation', novalidate: true, data: { controller: 'bootstrap-forms' } }) do |form| %>
   <% if @event.errors.any? %>
     <div class="alert alert-danger">
       <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
