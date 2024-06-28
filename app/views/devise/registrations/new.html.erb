@@ -2,7 +2,7 @@
   <div class="col-md-4">
     <h2>Crear nueva cuenta</h2>
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "needs-validation", novalidate: true }) do |f| %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "needs-validation", novalidate: true, 'data-controller' => 'bootstrap-forms' }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="mb-3">
