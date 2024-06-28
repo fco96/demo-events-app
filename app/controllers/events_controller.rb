@@ -5,7 +5,8 @@ class EventsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @events = current_user.events
+    @upcomming_events = current_user.events.upcoming.order(date_time: :asc)
+    @past_events = current_user.events.past.order(date_time: :desc)
   end
 
   def new

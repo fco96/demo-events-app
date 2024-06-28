@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe EventsController, type: :controller do
   let(:user) { create(:user) }
   let(:event) { create(:event, user:) }
+  let(:past_event) { create(:event, :past, user:) }
 
   before do
     sign_in user
@@ -14,10 +15,18 @@ RSpec.describe EventsController, type: :controller do
       expect(response).to be_successful
     end
 
-    it 'assigns current user events to @events' do
+    it 'assigns future events to @upcomming_events' do
       event
+      past_event
       get :index
-      expect(assigns(:events)).to eq([event])
+      expect(assigns(:upcomming_events)).to eq([event])
+    end
+
+    it 'assigns past events to @past_events' do
+      event
+      past_event
+      get :index
+      expect(assigns(:past_events)).to eq([past_event])
     end
   end
 

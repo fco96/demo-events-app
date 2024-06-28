@@ -3,7 +3,8 @@
 class Event < ApplicationRecord
   belongs_to :user
 
-  default_scope { order(created_at: :desc) }
+  scope :upcoming, -> { where(date_time: Time.now.utc..) }
+  scope :past, -> { where(date_time: ...Time.now.utc) }
 
   validates :name, presence: true
   validates :date_time, presence: true

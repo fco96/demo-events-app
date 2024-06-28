@@ -6,5 +6,9 @@ FactoryBot.define do
     location { Faker::Address.full_address }
     capacity { Faker::Number.between(from: 1, to: 100) }
     association :user
+
+    trait :past do
+      date_time { Faker::Time.backward(days: 23, period: :morning) }
+    end
   end
 end
