@@ -11,7 +11,8 @@
         "rubocop.vscode-rubocop",
         "eamodio.gitlens",
         "ahgood.shift-shift",
-        "CraigMaslowski.erb"
+        "CraigMaslowski.erb",
+        "MateuszDrewniak.ruby-test-runner"
       ]
     }
   } //　The directory to connect to at startup
