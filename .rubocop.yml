@@ -19,5 +19,8 @@ Layout/LineLength:
     - "db/schema.rb"
     - "config/**/*.rb"
 
+Rails/NotNullColumn:
+  Enabled: false
+
 Style/Documentation:
   Enabled: false
