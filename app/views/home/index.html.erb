@@ -1,8 +1,14 @@
 <% unless current_user %>
-  <div class="text-center fs-4">
-    Para poder ocupar esta aplicación primero debes    
-    <a href="<%= new_user_session_path %>">
-      iniciar sesión
-    </a>
+  <div class="text-center pt-5">
+    <div>
+      <i class="fa-regular fa-face-smile-beam" style="font-size: 60px;"></i>
+    </div>
+
+    <div class="mt-4">
+      Bienvenido, para comenzar a utilizar la aplicación es necesario que inicies sesión.
+      <a href="<%= new_user_session_path %>">
+        Iniciar sesión
+      </a>
+    </div>
   </div>
 <% end %>
