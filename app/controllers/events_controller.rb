@@ -18,7 +18,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-      redirect_to events_path, notice: 'Evento creado exitosamente!'
+      redirect_to events_path, notice: I18n.t('events.created')
     else
       render :new, status: :internal_server_error
     end
@@ -26,7 +26,7 @@ class EventsController < ApplicationController
 
   def update
     if @event.update(event_params)
-      redirect_to events_path, notice: 'Evento actualizado exitosamente!'
+      redirect_to events_path, notice: I18n.t('events.updated')
     else
       render :edit, status: :internal_server_error
     end
@@ -34,7 +34,7 @@ class EventsController < ApplicationController
 
   def destroy
     @event.destroy
-    redirect_to events_url, notice: 'Event was successfully destroyed.'
+    redirect_to events_url, notice: I18n.t('events.destroyed')
   end
 
   private

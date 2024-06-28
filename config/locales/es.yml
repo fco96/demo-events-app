@@ -1,0 +1,5 @@
+es:
+  events:
+    created: 'Evento creado exitosamente!'
+    updated: 'Evento actualizado exitosamente!'
+    destroyed: 'El evento fue eliminado exitosamente.'
