@@ -4,6 +4,7 @@ require:
 AllCops:
   TargetRubyVersion: 3.3
   NewCops: enable
+  SuggestExtensions: false
 
 Rails:
   Enabled: true

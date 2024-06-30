@@ -59,7 +59,7 @@ RSpec.describe EventsController, type: :controller do
       it 'redirects to the events list' do
         post :create, params: { event: valid_attributes }
         expect(response).to redirect_to(events_path)
-        expect(flash[:notice]).to eq('Evento creado exitosamente!')
+        expect(flash[:notice]).to eq(I18n.t('events.created'))
       end
     end
 
@@ -93,7 +93,7 @@ RSpec.describe EventsController, type: :controller do
       it 'redirects to the events list' do
         put :update, params: { id: event.to_param, event: new_attributes }
         expect(response).to redirect_to(events_path)
-        expect(flash[:notice]).to eq('Evento actualizado exitosamente!')
+        expect(flash[:notice]).to eq(I18n.t('events.updated'))
       end
     end
 
@@ -119,7 +119,7 @@ RSpec.describe EventsController, type: :controller do
     it 'redirects to the events list' do
       delete :destroy, params: { id: event.to_param }
       expect(response).to redirect_to(events_url)
-      expect(flash[:notice]).to eq('Event was successfully destroyed.')
+      expect(flash[:notice]).to eq(I18n.t('events.destroyed'))
     end
   end
 end
