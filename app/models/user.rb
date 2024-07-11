@@ -7,6 +7,8 @@ class User < ApplicationRecord
          :rememberable, :validatable
 
   has_many :events, dependent: :destroy
+  has_many :registrations, dependent: :destroy
+  has_many :invited_events, through: :registrations, source: :event
 
   validates :first_name, :last_name, presence: true
 

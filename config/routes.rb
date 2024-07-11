@@ -10,7 +10,12 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
 
-  resources :events, except: [:show]
+  resources :events, except: [:show] do
+    member do
+      get :invitation
+      post :accept_invitation
+    end
+  end
 
   # Defines the root path route ("/")
   # root "posts#index"

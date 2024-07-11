@@ -3,6 +3,9 @@
 class Event < ApplicationRecord
   belongs_to :user
 
+  has_many :registrations, dependent: :destroy
+  has_many :invited_users, through: :registrations, source: :user
+
   scope :upcoming, -> { where(date_time: Time.now.utc..) }
   scope :past, -> { where(date_time: ...Time.now.utc) }
 

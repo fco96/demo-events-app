@@ -8,15 +8,39 @@
 </div>
 
 <div class="accordion mt-4" id="accordionFlushExample">
+
   <div class="accordion-item">
     <h2 class="accordion-header">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#invited-events" aria-expanded="true" aria-controls="invited-events">
+        <strong>
+          Eventos que me han invitado
+        </strong>
+      </button>
+    </h2>
+    <div id="invited-events" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+        <% if @invited_events.empty? %>
+          <div class="text-center py-3">
+            No hay eventos que mostrar en esta sección.
+          </div>
+        <% else %>
+          <% @invited_events.each do |event| %>
+            <%= render 'event_box', event: event %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
         <strong>
           Eventos
         </strong>
       </button>
     </h2>
-    <div id="flush-collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushExample">
+    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
       <div class="accordion-body">
         <% if @upcomming_events.empty? %>
           <div class="text-center py-3">
@@ -30,6 +54,7 @@
       </div>
     </div>
   </div>
+
   <div class="accordion-item">
     <h2 class="accordion-header">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
@@ -52,4 +77,5 @@
       </div>
     </div>
   </div>
+
 </div>

@@ -1,0 +1,57 @@
+<div class="event-box card mb-4">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-12">
+        <h3>
+          Invitación a evento "<%= @event.name %>"
+        </h3>
+        <p>
+          <%= @event.description %>
+        </p>
+      </div>
+    </div>
+    <p>
+
+      <strong>
+        Organizador
+      </strong>
+      <%= @event.user.full_name %>
+    </p>
+    <p>
+      <i class="fa-regular fa-calendar"></i>
+
+      <strong>
+        Fecha:
+      </strong>
+      <%= @event.date_time.strftime('%d/%m/%Y %H:%M') %>
+    </p>
+    <p>
+      <i class="fa-solid fa-location-dot"></i>
+      <strong>
+        Ubicación:
+      </strong>
+      <%= @event.location %>
+    </p>
+    <p>
+      <strong>
+        Capacidad:
+      </strong>
+      <%= @event.capacity %>
+    </p>
+
+    <div data-controller="hello">
+      ¿Quieres aceptar la invitación a este evento?
+
+      <input type="hidden" data-hello-target="event" value="<%= @event.id %>">
+
+      <button type="button" 
+        class="btn btn-success"
+        data-action="click->hello#accept"
+      >
+        Si, quiero
+      </button>
+      <button type="button" class="btn btn-danger" data-action="click->hello#reject">Rechazar</button>
+    </div>
+
+  </div>
+</div>

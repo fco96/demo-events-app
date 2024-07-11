@@ -1,6 +1,8 @@
 {
   "name": "Events demo app",
-  "dockerComposeFile": ["../docker-compose.yml"],
+  "dockerComposeFile": [
+    "../docker-compose.yml"
+  ],
   "service": "app", //Specify the service name and Rails service to be started as described in docker-compse.yml
   "shutdownAction": "none",
   "workspaceFolder": "/home/app",
@@ -12,7 +14,7 @@
         "eamodio.gitlens",
         "ahgood.shift-shift",
         "CraigMaslowski.erb",
-        "MateuszDrewniak.ruby-test-runner"
+        "noku.rails-run-spec-vscode"
       ]
     }
   } //　The directory to connect to at startup
